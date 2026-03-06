@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+
+<h1 class="dashboard-title">🔐 Security Dashboard</h1>
+
+<div class="stats-container">
+    <div class="card">
+        <h3>Total Logins</h3>
+        <p id="total">0</p>
+    </div>
+
+    <div class="card success">
+        <h3>Successful</h3>
+        <p id="success">0</p>
+    </div>
+
+    <div class="card failed">
+        <h3>Failed</h3>
+        <p id="failed">0</p>
+    </div>
+
+    <div class="card alert">
+        <h3>Attacks</h3>
+        <p id="attacks">0</p>
+    </div>
+</div>
+
+<div class="chart-container">
+    <canvas id="loginChart"></canvas>
+</div>
+
+<script>
+async function loadStats() {
+    const res = await fetch("/stats");
+    const data = await res.json();
+
+    document.getElementById("total").innerText = data.total;
+    document.getElementById("success").innerText = data.success;
+    document.getElementById("failed").innerText = data.failed;
+    document.getElementById("attacks").innerText = data.attacks;
+
+    new Chart(document.getElementById("loginChart"), {
+        type: "doughnut",
+        data: {
+            labels: ["Success", "Failed", "Attacks"],
+            datasets: [{
+                data: [data.success, data.failed, data.attacks],
+                backgroundColor: ["#00c853", "#d50000", "#ff6d00"]
+            }]
+        }
+    });
+}
+
+loadStats();
+</script>
+
+</body>
+</html>

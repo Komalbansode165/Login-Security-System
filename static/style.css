@@ -1,0 +1,154 @@
+
+
+.login-body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    width: 380px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    color: white;
+    text-align: center;
+}
+
+.login-box h1 {
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.form-group label {
+    position: absolute;
+    left: 0;
+    top: 12px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label {
+    top: -10px;
+    font-size: 12px;
+    color: #00e5ff;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #00e5ff;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00bcd4;
+    box-shadow: 0 0 15px #00e5ff;
+}
+
+.result {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.admin-btn {
+    display: block;
+    margin-top: 20px;
+    color: #00e5ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.admin-btn:hover {
+    text-decoration: underline;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 30px;
+}
+
+.dashboard-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    margin: 10px;
+}
+
+.card h3 {
+    margin: 0;
+}
+
+.card p {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.success { border-left: 5px solid #00c853; }
+.failed { border-left: 5px solid orange; }
+.alert { border-left: 5px solid red; }
+
+.chart-container {
+    width: 400px;
+    margin: auto;
+}
